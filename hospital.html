@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Registration - Health Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f0f8ff, #e1bee7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .heading {
+            text-align: center;
+        }
+        .registration-container {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            width: 800px;
+            max-width: 95%;
+            text-align: left;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        .form-group input[type="file"] {
+            border: none;
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, #880e4f, #ad1457);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: block; /* Make it a block-level element */
+            margin: 20px auto; /* Add margin to center horizontally */
+            text-align: center; /* Center the text inside the button, if needed */
+        }
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(136, 14, 79, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2 class="heading">Hospital Registration</h2>
+        <form id="hospitalRegistrationForm">
+            <h3>1. Hospital Information</h3>
+            <div class="form-group">
+                <label for="hospitalName">Legal Name of Hospital *</label>
+                <input type="text" id="hospitalName" required>
+            </div>
+            <div class="form-group">
+                <label for="operatingName">Operating Name (if different)</label>
+                <input type="text" id="operatingName">
+            </div>
+            <div class="form-group">
+                <label for="hospitalType">Type of Hospital *</label>
+                <select id="hospitalType" required>
+                    <option value="">Select Type</option>
+                    <option value="General">General</option>
+                    <option value="Specialty">Specialty</option>
+                    <option value="Teaching">Teaching</option>
+                    <option value="Private">Private</option>
+                    <option value="Public">Public</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="registrationNumber">Registration Number (if applicable)</label>
+                <input type="text" id="registrationNumber">
+            </div>
+            <div class="form-group">
+                <label for="establishmentDate">Date of Establishment *</label>
+                <input type="date" id="establishmentDate" required>
+            </div>
+            <div class="form-group">
+                <label for="hospitalAddress">Hospital Address *</label>
+                <textarea id="hospitalAddress" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contactPhone">Contact Phone Number *</label>
+                <input type="tel" id="contactPhone" required>
+            </div>
+            <div class="form-group">
+                <label for="emailAddress">Email Address *</label>
+                <input type="email" id="emailAddress" required>
+            </div>
+            <div class="form-group">
+                <label for="website">Website (if applicable)</label>
+                <input type="url" id="website">
+            </div>
+
+            <h3>2. Ownership and Management</h3>
+            <div class="form-group">
+                <label for="legalEntity">Legal Entity Type *</label>
+                <input type="text" id="legalEntity" required>
+            </div>
+            <div class="form-group">
+                <label for="ownerName">Name of Owner(s)/Board of Directors *</label>
+                <input type="text" id="ownerName" required>
+            </div>
+            <div class="form-group">
+                <label for="adminName">Hospital Administrator/CEO *</label>
+                <input type="text" id="adminName" required>
+            </div>
+            <div class="form-group">
+                <label for="orgChart">Upload Organizational Chart *</label>
+                <input type="file" id="orgChart" required>
+            </div>
+            
+            <h3>3. Facility and Infrastructure</h3>
+            <div class="form-group">
+                <label for="totalBeds">Total Number of Beds *</label>
+                <input type="number" id="totalBeds" required>
+            </div>
+            <div class="form-group">
+                <label for="operatingRooms">Number of Operating Rooms *</label>
+                <input type="number" id="operatingRooms" required>
+            </div>
+            
+            <h3>4. Personnel</h3>
+            <div class="form-group">
+                <label for="numPhysicians">Number of Physicians (by specialty) *</label>
+                <input type="number" id="numPhysicians" required>
+            </div>
+            <div class="form-group">
+                <label for="numNurses">Number of Registered Nurses *</label>
+                <input type="number" id="numNurses" required>
+            </div>
+
+            <div class="form-group">
+                <label for="operationTheater1">Select Operation Theater Type</label>
+                <select id="operationTheater1" required>
+                    <option value="">Select Type</option>
+                    <option value="Cesarean Section OT">Cesarean Section OT</option>
+                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
+                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
+                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
+                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                </select>
+                <input type="number" id="numOperationTheater1" placeholder="Number of this type" required>
+            </div>
+            <div class="form-group">
+                <label for="operationTheater2">Select Operation Theater Type</label>
+                <select id="operationTheater2" required>
+                    <option value="">Select Type</option>
+                    <option value="Cesarean Section OT">Cesarean Section OT</option>
+                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
+                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
+                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
+                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                </select>
+                <input type="number" id="numOperationTheater2" placeholder="Number of this type" required>
+            </div>
+            <div class="form-group">
+                <label for="operationTheater3">Select Operation Theater Type</label>
+                <select id="operationTheater3" required>
+                    <option value="">Select Type</option>
+                    <option value="Cesarean Section OT">Cesarean Section OT</option>
+                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
+                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
+                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
+                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                </select>
+                <input type="number" id="numOperationTheater3" placeholder="Number of this type" required>
+            </div>
+            <div class="form-group">
+                <label for="operationTheater4">Select Operation Theater Type</label>
+                <select id="operationTheater4" required>
+                    <option value="">Select Type</option>
+                    <option value="Cesarean Section OT">Cesarean Section OT</option>
+                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
+                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
+                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
+                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                </select>
+                <input type="number" id="numOperationTheater4" placeholder="Number of this type" required>
+            </div>
+            <div class="form-group">
+                <label for="operationTheater5">Select Operation Theater Type</label>
+                <select id="operationTheater5" required>
+                    <option value="">Select Type</option>
+                    <option value="Cesarean Section OT">Cesarean Section OT</option>
+                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
+                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
+                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
+                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                </select>
+                <input type="number" id="numOperationTheater5" placeholder="Number of this type" required>
+            </div>
+            
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
