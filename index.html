@@ -120,6 +120,64 @@
                 <input type="url" id="website">
             </div>
 
+            
+            <div class="form-group">
+                <label for="accreditationStatus">Is the hospital accredited? *</label>
+                <select id="accreditationStatus" required>
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="accreditingBody">Accrediting Body (e.g., NABH, JCI, ISO)</label>
+                <input type="text" id="accreditingBody">
+            </div>
+            <div class="form-group">
+                <label for="emergencyServices">Emergency Services Availability *</label>
+                <select id="emergencyServices" required>
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Specialized Departments (Check all that apply):</label>
+                <div>
+                    <input type="checkbox" id="maternity" name="departments" value="Maternity">
+                    <label for="maternity">Maternity</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pediatrics" name="departments" value="Pediatrics">
+                    <label for="pediatrics">Pediatrics</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="surgery" name="departments" value="Surgery">
+                    <label for="surgery">Surgery</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="orthopedics" name="departments" value="Orthopedics">
+                    <label for="orthopedics">Orthopedics</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="cardiology" name="departments" value="Cardiology">
+                    <label for="cardiology">Cardiology</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="operatingHours">Operating Hours *</label>
+                <input type="text" id="operatingHours" placeholder="e.g., 24/7, 9 AM - 5 PM" required>
+            </div>
+            <div class="form-group">
+                <label for="telemedicine">Telemedicine Services *</label>
+                <select id="telemedicine" required>
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+
             <h3>2. Ownership and Management</h3>
             <div class="form-group">
                 <label for="legalEntity">Legal Entity Type *</label>
@@ -137,92 +195,167 @@
                 <label for="orgChart">Upload Organizational Chart *</label>
                 <input type="file" id="orgChart" required>
             </div>
-            
+            <div class="form-group">
+                <label for="taxID">Tax Identification Number (TIN) *</label>
+                <input type="text" id="taxID" required>
+            </div>
+            <div class="form-group">
+                <label for="fundingType">Type of Funding *</label>
+                <select id="fundingType" required>
+                    <option value="">Select Type</option>
+                    <option value="Public">Public</option>
+                    <option value="Private">Private</option>
+                    <option value="Non-Profit">Non-Profit</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="licenseNumber">Hospital License Number *</label>
+                <input type="text" id="licenseNumber" required>
+            </div>
+
+
+
             <h3>3. Facility and Infrastructure</h3>
             <div class="form-group">
-                <label for="totalBeds">Total Number of Beds *</label>
-                <input type="number" id="totalBeds" required>
+                <label for="icuAvailability">ICU Availability *</label>
+                <select id="icuAvailability" required>
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="operatingRooms">Number of Operating Rooms *</label>
-                <input type="number" id="operatingRooms" required>
+                <label for="maternityWardCapacity">Maternity Ward Capacity (Number of beds) *</label>
+                <input type="number" id="maternityWardCapacity" required>
             </div>
+            <div class="form-group">
+                <label for="pharmacyOnsite">Pharmacy Onsite *</label>
+                <select id="pharmacyOnsite" required>
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ambulanceServices">Ambulance Services *</label>
+                <select id="ambulanceServices" required>
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Diagnostic Services Available *</label>
+                <div>
+                    <input type="checkbox" id="xray" value="X-ray"> <label for="xray">X-ray</label>
+                    <input type="checkbox" id="ultrasound" value="Ultrasound"> <label for="ultrasound">Ultrasound</label>
+                    <input type="checkbox" id="mri" value="MRI"> <label for="mri">MRI</label>
+                    <input type="checkbox" id="ctscan" value="CT Scan"> <label for="ctscan">CT Scan</label>
+                    <input type="checkbox" id="bloodtest" value="Blood Test"> <label for="bloodtest">Blood Test</label>
+                </div>
+            </div>
+
+
             
             <h3>4. Personnel</h3>
             <div class="form-group">
-                <label for="numPhysicians">Number of Physicians (by specialty) *</label>
-                <input type="number" id="numPhysicians" required>
+                <label for="numMidwives">Number of Midwives *</label>
+                <input type="number" id="numMidwives" required>
             </div>
             <div class="form-group">
-                <label for="numNurses">Number of Registered Nurses *</label>
-                <input type="number" id="numNurses" required>
+                <label for="supportStaff">Support Staff (e.g., Technicians, Admin) *</label>
+                <input type="number" id="supportStaff" required>
+            </div>
+            <div class="form-group">
+                <label for="specialistAvailability">Specialist Availability (e.g., Gynecologists, Pediatricians) *</label>
+                <input type="text" id="specialistAvailability" required>
+            </div>
+            <div class="form-group">
+                <label for="trainingPrograms">Training Programs Offered *</label>
+                <select id="trainingPrograms" required>
+                    <option value="">Select Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
             </div>
 
+
+            <h3>5. Patient Services</h3>
             <div class="form-group">
-                <label for="operationTheater1">Select Operation Theater Type</label>
-                <select id="operationTheater1" required>
-                    <option value="">Select Type</option>
-                    <option value="Cesarean Section OT">Cesarean Section OT</option>
-                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
-                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
-                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
-                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                <label for="insuranceAccepted">Insurance Accepted *</label>
+                <select id="insuranceAccepted" required>
+                    <option value="">Select Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
                 </select>
-                <input type="number" id="numOperationTheater1" placeholder="Number of this type" required>
+            </div>
+            <div class="form-group" id="insuranceProvidersGroup" style="display: none;">
+                <label for="insuranceProviders">If Yes, specify providers</label>
+                <input type="text" id="insuranceProviders">
             </div>
             <div class="form-group">
-                <label for="operationTheater2">Select Operation Theater Type</label>
-                <select id="operationTheater2" required>
-                    <option value="">Select Type</option>
-                    <option value="Cesarean Section OT">Cesarean Section OT</option>
-                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
-                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
-                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
-                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
-                </select>
-                <input type="number" id="numOperationTheater2" placeholder="Number of this type" required>
+                <label for="languageSupport">Language Support (Languages spoken at the hospital) *</label>
+                <input type="text" id="languageSupport" required>
             </div>
             <div class="form-group">
-                <label for="operationTheater3">Select Operation Theater Type</label>
-                <select id="operationTheater3" required>
-                    <option value="">Select Type</option>
-                    <option value="Cesarean Section OT">Cesarean Section OT</option>
-                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
-                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
-                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
-                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                <label for="patientTransport">Patient Transport Services *</label>
+                <select id="patientTransport" required>
+                    <option value="">Select Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
                 </select>
-                <input type="number" id="numOperationTheater3" placeholder="Number of this type" required>
             </div>
             <div class="form-group">
-                <label for="operationTheater4">Select Operation Theater Type</label>
-                <select id="operationTheater4" required>
-                    <option value="">Select Type</option>
-                    <option value="Cesarean Section OT">Cesarean Section OT</option>
-                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
-                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
-                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
-                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                <label for="patientCapacity">Average Patient Capacity Per Day *</label>
+                <input type="number" id="patientCapacity" required>
+            </div>
+
+            <h3>6. Technology and Records</h3>
+            <div class="form-group">
+                <label for="emrSystem">Electronic Medical Records (EMR) System *</label>
+                <select id="emrSystem" required>
+                    <option value="">Select Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
                 </select>
-                <input type="number" id="numOperationTheater4" placeholder="Number of this type" required>
             </div>
             <div class="form-group">
-                <label for="operationTheater5">Select Operation Theater Type</label>
-                <select id="operationTheater5" required>
-                    <option value="">Select Type</option>
-                    <option value="Cesarean Section OT">Cesarean Section OT</option>
-                    <option value="High-Risk Pregnancy OT">High-Risk Pregnancy OT</option>
-                    <option value="Neonatal Intensive Care OT">Neonatal Intensive Care OT</option>
-                    <option value="Laparoscopic Surgery OT">Laparoscopic Surgery OT</option>
-                    <option value="Emergency Obstetric OT">Emergency Obstetric OT</option>
+                <label for="internetConnectivity">Internet Connectivity *</label>
+                <select id="internetConnectivity" required>
+                    <option value="">Select Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
                 </select>
-                <input type="number" id="numOperationTheater5" placeholder="Number of this type" required>
+            </div>
+            <div class="form-group">
+                <label for="dataPrivacy">Patient Data Privacy Measures *</label>
+                <textarea id="dataPrivacy" required placeholder="Briefly describe the measures taken"></textarea>
             </div>
             
             <button type="submit" class="btn-submit">Register</button>
         </form>
     </div>
 
+    <script>
+        document.getElementById('insuranceAccepted').addEventListener('change', function() {
+            const insuranceProvidersGroup = document.getElementById('insuranceProvidersGroup');
+            if (this.value === 'Yes') {
+                insuranceProvidersGroup.style.display = 'block';
+            } else {
+                insuranceProvidersGroup.style.display = 'none';
+            }
+        });
+    </script>
+
+    </div>
+
+    
+
     
 </body>
 </html>
+
+
+
+
+
